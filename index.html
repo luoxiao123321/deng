@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="user"/>
+	<input type="text" id="pass"/>
+	<button id="btn">提交</button>
+	<script type="text/javascript">
+		btn.onclick=function(){
+			ajax({
+				url:'http://localhost:5000',
+				type:'get',
+				data:{
+					user:user.value,
+					pass:pass.value
+				},
+				success:function(data){
+					console.log(data)
+				},
+				error:function(){}
+			})
+		}
+	</script>
+	<script type="text/javascript" src="ajax.js"></script>
+</body>
+</html>
